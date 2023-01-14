@@ -1,0 +1,13 @@
+name: CI workflow
+
+on: 
+  push:
+    branches:
+      - main    # Workflow starts whenever code is pushed to the main branch
+  pull_request:
+    branches: [ main ]  # Workflow also starts when PR is created against the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3.9-slim
